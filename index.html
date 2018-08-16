@@ -8,7 +8,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="js/scripts.js"></script>
+    <script type='text/javascript' src='js/changedesc.js'></script>
+
 </head>
     <div class="hero-image">
     <section>
@@ -21,14 +24,20 @@
     </section>        
     <section>    
             <div class="split right">
-                    <div class="centered" >
-                                <select id = "choice">
+                <div class="drop" >
+                                <select id = "choice" onchange="changedesc()">
                                         <option disabled selected value> Select Traversal </option>
                                         <option value = "1">Breath-First Traversal</option>
                                         <option value = "2">Preorder Depth-first Traversal</option>
                                         <option value = "3">Postorder Depth-first Traversal</option>
                                         <option value = "4">Inorder Depth-first Traversal</option>
                                  </select>
+                                 
+                </div>
+                <div class="pseudo">
+                    <p>
+                    
+                    </p>
                 </div>
             </div>
     </section> 
