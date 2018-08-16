@@ -8,22 +8,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
     <script src="js/scripts.js"></script>
     <script type='text/javascript' src='js/changedesc.js'></script>
+  
 
 </head>
+<body>
     <div class="hero-image">
-    <section>
-            <div class="split left">
-                <div class="centered">  
-                <h2>Jane Flex</h2>
-                <p>Some text.</p>
-                </div>
-            </div>
-    </section>        
+    <section>  
+        <div id="tree-container"></div>
+    </section>    
     <section>    
-            <div class="split right">
                 <div class="drop" >
                                 <select id = "choice" onchange="changedesc()">
                                         <option disabled selected value> Select Traversal </option>
@@ -39,10 +35,8 @@
                     
                     </p>
                 </div>
-            </div>
     </section> 
     </div>      
-<body>
-    
 </body>
+<script src="js/traversal.js"></script>
 </html>

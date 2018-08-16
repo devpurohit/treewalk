@@ -9,31 +9,13 @@
 }
 
 /* Split the screen in half */
-.split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    
-  }
-  
-  /* Control the left side */
-  .left {
-    left: 0;
-  }
-  
-  /* Control the right side */
-  .right {
-    right: 0;
-  }
+
   
   /* If you want the content centered horizontally and vertically */
   .drop {
     position: absolute;
     top: 35%;
-    left: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
     text-align: center;
   }
@@ -41,7 +23,7 @@
   .pseudo {
     position: absolute;
     top: 60%;
-    left: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
     text-align: center;
     
@@ -82,4 +64,34 @@ select {
     white-space: nowrap;
     
 
+}
+
+
+//CSS pertaining to the tree
+#tree-container{
+        
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.node {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
 }
