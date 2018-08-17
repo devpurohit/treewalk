@@ -1,10 +1,16 @@
 var changedesc= function() {
     selectValue = d3.select('select').property('value')
+
     
     d3.select('.pseudo')
         .select('p')
 		.html(function(d) { 
-            if(selectValue == "1") {
+            if(selectValue == "5") {
+                resetTraversal();
+                d3.select('p').remove();
+                return null;
+            }
+            else if(selectValue == "1") {
                 bft();
                 return `Algorithm BreathFirst(tree)<br>
                 1) Create an empty queue q<br>
@@ -32,8 +38,11 @@ var changedesc= function() {
                 2. Visit the root.<br>
                 3.&nbsp;Traverse&nbsp;the&nbsp;right&nbsp;subtree,&nbsp;i.e.,&nbsp;call&nbsp;Inorder(rightSubtree)<br>`;
             }
-        })
-    
+            
+            }
+        )
+
+        
         d3.select('.pseudo')
         .select('p')
 		.style("background-color","rgba(255, 255, 255, 0.63)")
