@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-
+    overflow: hidden;
 }
   
   /* If you want the content centered horizontally and vertically */
@@ -98,6 +98,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    
 }
 
 .node {
