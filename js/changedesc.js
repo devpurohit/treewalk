@@ -1,12 +1,15 @@
 var changedesc= function() {
     selectValue = d3.select('select').property('value')
     resetTraversal();
-    d3.selectAll('p').remove();
+    d3.select('.pseudo')
+    .selectAll('p').remove();
     d3.selectAll("td").remove();
+    
 
-
+if(selectValue!== "5"){
     d3.select('.pseudo')
         .append('p')
+        .style("background-color","rgba(255, 255, 255, 0.63)")
         .html(function(d) {  
                 
 
@@ -44,11 +47,9 @@ var changedesc= function() {
             
             }
         )
-
+    }
         
-        d3.select('.pseudo')
-        .select('p')
-		.style("background-color","rgba(255, 255, 255, 0.63)")
+		
 
 
 };

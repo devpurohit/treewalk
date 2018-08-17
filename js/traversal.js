@@ -93,7 +93,7 @@ function visitElement(element,animX){
   d3.select("table")
     .append("td")
     .transition().duration(animDuration).delay(animDuration*animX)
-    .style("background-color","#34495e")
+    .style("background-color","rgba(255, 255, 255, 0.63)")
     .text(element.name);
     
 		
