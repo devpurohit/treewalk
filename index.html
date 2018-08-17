@@ -15,11 +15,18 @@
 
 </head>
 <body>
+
+    <!-- Display the Hero image full screen -->
     <div class="hero-image">
+
+    <!--Section reserved for tree    -->
     <section>  
         <div id="tree-container"></div>
-    </section>    
+    </section>   
+    
+    <!--Section for controls and add. information -->
     <section>    
+                <!--Drop Menu to select the type of traversal -->
                 <div class="drop" >
                                 <select id = "choice" onchange="changedesc()">
                                         <option disabled selected value> Select Traversal </option>
@@ -30,15 +37,17 @@
                                         <option value = "5">Reset Selection</option>
                                  </select>
                 </div>
-                
+
+                <!--Reserved for traversal info -->
                 <div class="pseudo">
                 </div>
 
+                <!--Reserved for showing the traversed nodes -->
                 <table>
                     <tr></tr>
                 </table>
     </section> 
-    </div>      
+    </div>     <!--Hero div close   -->
 </body>
 <script src="js/traversal.js"></script>
 </html>

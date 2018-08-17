@@ -1,3 +1,4 @@
+/* Basic tuneup */
 * {
     margin: 0px;
     padding: 0px;
@@ -8,7 +9,7 @@
     overflow: hidden;
 }
   
-  /* If you want the content centered horizontally and vertically */
+  /* Giving an absolute position to all elements */
   .drop {
     position: absolute;
     top: 15%;
@@ -16,6 +17,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
   }
+  
   
   select {
     background-color: #2c3e50b6; 
@@ -28,6 +30,8 @@
     white-space: nowrap;
 
 }
+
+  /* Styles for the traversal information */
   .pseudo {
     position: absolute;
     top: 45%;
@@ -46,6 +50,7 @@
     
   } 
 
+  /* Styles for traversed elements */  
   table {
     position: absolute;
     top: 85%;
@@ -66,10 +71,10 @@
 
   /* The hero image */
 .hero-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    /*  "linear-gradient" to add a darken background  */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/hero.jpg");
 
-    /* Position and center the image to scale nicely on all screens */
+    /* Position and center the image to scale  on all screens */
     background-size: cover;
     background-position: center;
     height: 100vh;

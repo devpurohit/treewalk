@@ -1,11 +1,15 @@
+// This JS includes functions to control tree traversal anf information 
+
 var changedesc= function() {
     selectValue = d3.select('select').property('value')
+
+    // Resetting the displayed info
     resetTraversal();
     d3.select('.pseudo')
     .selectAll('p').remove();
     d3.selectAll("td").remove();
     
-
+// Checking whether Reset button is clicked
 if(selectValue!== "5"){
     d3.select('.pseudo')
         .append('p')

@@ -1,4 +1,4 @@
-
+// COntains functions for tree traversal
 var i=0, animDuration=800,root;
 
 var tree = d3.layout.tree()
@@ -11,6 +11,7 @@ d3.selection.prototype.moveToFront = function() {
   });
 };
 
+// Generating a SVG to draw the tree
 var svg = d3.select("#tree-container").append("svg")
 .attr("preserveAspectRatio", "xMinYMin meet")
 .attr("viewBox", "0 0 1280 720")
@@ -21,6 +22,7 @@ var svg = d3.select("#tree-container").append("svg")
 root= treeData[0];
 update(treeData[0]);
 
+// Resets tree styles
 function resetTraversal(root){
   //d3.selectAll(".node").classed("visited",false);
   d3.selectAll(".node")
@@ -30,6 +32,7 @@ function resetTraversal(root){
 
 }
 
+// Prints the tree 
 function update(root) {
 
   resetTraversal(root);
@@ -85,7 +88,6 @@ function update(root) {
 
 }
 function visitElement(element,animX){
- // d3.select("#node-"+element.id).classed("visited",true);
   d3.select("#node-"+element.id)
     .transition().duration(animDuration).delay(animDuration*animX)
     .style("fill","red").style("stroke","red");
@@ -100,6 +102,7 @@ function visitElement(element,animX){
     
 }
 
+// For Post Order Traversal
 function post(){
   var stack=[];
   var animX=0;  
@@ -125,6 +128,8 @@ function post(){
   postT(root);
   
 }
+
+// For Pre Order Traversal
 function pre(){
   var stack=[];
   var animX=0;  
@@ -152,6 +157,8 @@ function pre(){
   preT(root);
   
 }
+
+// For In Order Traversal
 function inO(){
   var stack=[];
   var animX=0;  
@@ -182,7 +189,7 @@ function inO(){
   
 }
 
-
+// // For Breath First Traversal
 function bft(){
   var queue=[];
   var animX=0;
