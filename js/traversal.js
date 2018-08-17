@@ -41,10 +41,12 @@ function update(root) {
   // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth *100; });
 
-  // Declare and append the nodes
-  var nodeWrapper = svg.append("g").attr("id","nodes").selectAll("g.node")
+    // Declare and append the nodes
+    var nodeWrapper = svg.append("g").attr("id","nodes").selectAll("g.node")
     .data(nodes, function(d) {return d.id || (d.id = ++i); })
-    .enter().append("circle")
+    .enter();
+
+    nodeWrapper.append("circle")
     .attr("class", "node")
     //Root is the highest ID
     .attr("id",function(d){return "node-"+d.id})
@@ -52,6 +54,18 @@ function update(root) {
     .attr("cy",function(d){return d.y;})
     .attr("r", 20);
 
+    nodeWrapper.append("text")
+    .attr("x", function(d) { 
+      return d.children || d._children ? d.x+5 : d.x-5; })
+    .attr("y",function(d){return d.y;})
+    .attr("text-anchor", function(d) { 
+      return d.children || d._children ? "end" : "start"; })
+    .style('font-weight',400)
+    .text(function(d) { return d.name; })
+    
+    ;
+
+    
   // Declare and append the links
   var linkWrapper = svg.append("g").attr("id","links").selectAll("path.link")
     .data(links, function(d) { return d.target.id; })
@@ -75,23 +89,35 @@ function visitElement(element,animX){
   d3.select("#node-"+element.id)
     .transition().duration(animDuration).delay(animDuration*animX)
     .style("fill","red").style("stroke","red");
+    
 }
 
 function dft(){
   var stack=[];
-  var animX=0;
-  stack.push(root);
-  while(stack.length!==0){
-    var element = stack.pop();
-    visitElement(element,animX);
-    animX=animX+1;
-    if(element.children!==undefined){
-      for(var i=0; i<element.children.length; i++){
-        stack.push(element.children[element.children.length-i-1]);
-      }
-    }
-  }
+  var animX=0;  
+  
+  if(root.children!==undefined){
+
+        function inOrder(node) {
+          if(node.children!==undefined) {
+          if(node) { 
+            inOrder(node.children[0])
+            }
+          
+          if(node.children[1]!==undefined) {
+            if(node) { 
+              inOrder(node.children[1])
+              }
+            } }
+          visitElement(node,animX);
+          animX= animX+1;
+          
+        } 
 }
+  inOrder(root);
+  
+}
+
 
 function bft(){
   var queue=[];
@@ -108,3 +134,4 @@ function bft(){
     }
   }
 }
+

@@ -1,16 +1,14 @@
 var changedesc= function() {
     selectValue = d3.select('select').property('value')
+    resetTraversal();
+    d3.selectAll('p').remove();
 
-    
     d3.select('.pseudo')
-        .select('p')
-		.html(function(d) { 
-            if(selectValue == "5") {
-                resetTraversal();
-                d3.select('p').remove();
-                return null;
-            }
-            else if(selectValue == "1") {
+        .append('p')
+        .html(function(d) {  
+                
+
+             if(selectValue == "1") {
                 bft();
                 return `Algorithm BreathFirst(tree)<br>
                 1) Create an empty queue q<br>
@@ -21,6 +19,7 @@ var changedesc= function() {
                 &nbsp;&nbsp;c)&nbsp;Dequeue&nbsp;a&nbsp;node&nbsp;from&nbsp;q&nbsp;and&nbsp;assign&nbsp;it’s&nbsp;value&nbsp;to&nbsp;temp_node`;
             }
             else if(selectValue == "2") {
+                dft();
                 return `Algorithm Preorder(tree)<br>
                 1. Visit the root.<br>
                 2.&nbsp;Traverse&nbsp;the&nbsp;left&nbsp;subtree,&nbsp;i.e.,&nbsp;call&nbsp;Preorder(leftSubtree)<br>
