@@ -46,8 +46,22 @@
     
   } 
 
-  .nowrap {
-    white-space: nowrap ;
+  table {
+    position: absolute;
+    top: 85%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+  }
+
+  table td {
+    padding: 20px;
+    color: rgb(7, 7, 7);
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-align: justify;
+    
   } 
 
   /* The hero image */
@@ -64,7 +78,7 @@
 
 
 
-//CSS pertaining to the tree
+/* CSS pertaining to the tree*/
 #tree-container{
         
     display: inline-block;
@@ -82,6 +96,7 @@
     
 }
 
+/* Tree links and nodes*/
 .node {
   fill: #fff;
   stroke: steelblue;

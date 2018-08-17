@@ -89,24 +89,32 @@ function visitElement(element,animX){
   d3.select("#node-"+element.id)
     .transition().duration(animDuration).delay(animDuration*animX)
     .style("fill","red").style("stroke","red");
+
+  d3.select("table")
+    .append("td")
+    .transition().duration(animDuration).delay(animDuration*animX)
+    .style("background-color","#34495e")
+    .text(element.name);
+    
+		
     
 }
 
-function dft(){
+function post(){
   var stack=[];
   var animX=0;  
   
   if(root.children!==undefined){
 
-        function inOrder(node) {
+        function postT(node) {
           if(node.children!==undefined) {
           if(node) { 
-            inOrder(node.children[0])
+            postT(node.children[0])
             }
           
           if(node.children[1]!==undefined) {
             if(node) { 
-              inOrder(node.children[1])
+              postT(node.children[1])
               }
             } }
           visitElement(node,animX);
@@ -114,7 +122,63 @@ function dft(){
           
         } 
 }
-  inOrder(root);
+  postT(root);
+  
+}
+function pre(){
+  var stack=[];
+  var animX=0;  
+  
+  if(root.children!==undefined){
+
+        function preT(node) {
+
+          visitElement(node,animX);
+          animX= animX+1;
+          if(node.children!==undefined) {
+          if(node) { 
+            preT(node.children[0])
+            }
+          
+          if(node.children[1]!==undefined) {
+            if(node) { 
+              preT(node.children[1])
+              }
+            } }
+          
+          
+        } 
+}
+  preT(root);
+  
+}
+function inO(){
+  var stack=[];
+  var animX=0;  
+  
+  if(root.children!==undefined){
+
+        function inT(node) {
+
+          
+          if(node.children!==undefined) {
+          if(node) { 
+            inT(node.children[0])
+            }
+          }
+            visitElement(node,animX);
+            animX= animX+1;
+            if(node.children!==undefined) {
+          if(node.children[1]!==undefined) {
+            if(node) { 
+              inT(node.children[1])
+              }
+            } }
+          
+          
+        } 
+}
+  inT(root);
   
 }
 
