@@ -2,7 +2,7 @@
 var i=0, animDuration=800,root;
 
 var tree = d3.layout.tree()
-  .size([768, 432]);
+  .size([640, 360]);
 
 
 d3.selection.prototype.moveToFront = function() {  

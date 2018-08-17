@@ -5,6 +5,7 @@ var changedesc= function() {
         .select('p')
 		.html(function(d) { 
             if(selectValue == "1") {
+                bft();
                 return `Algorithm BreathFirst(tree)<br>
                 1) Create an empty queue q<br>
                 2) temp_node = root /*start from root*/<br>
